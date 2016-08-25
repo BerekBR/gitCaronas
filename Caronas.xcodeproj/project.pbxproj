@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		675B1C821D68A04C00EB775F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B1C811D68A04C00EB775F /* AppDelegate.swift */; };
-		675B1C841D68A04C00EB775F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B1C831D68A04C00EB775F /* ViewController.swift */; };
 		675B1C871D68A04C00EB775F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 675B1C851D68A04C00EB775F /* Main.storyboard */; };
 		675B1C891D68A04C00EB775F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 675B1C881D68A04C00EB775F /* Assets.xcassets */; };
 		675B1C8C1D68A04C00EB775F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 675B1C8A1D68A04C00EB775F /* LaunchScreen.storyboard */; };
+		675B1C941D68A09700EB775F /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B1C931D68A09700EB775F /* CadastroViewController.swift */; };
+		675B1C961D68A7F200EB775F /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B1C951D68A7F200EB775F /* Paths.swift */; };
+		675B1C9C1D68B78800EB775F /* ListaPassageirosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B1C9B1D68B78800EB775F /* ListaPassageirosViewController.swift */; };
+		675B1C9E1D68DC6300EB775F /* CaronaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B1C9D1D68DC6300EB775F /* CaronaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		675B1C7E1D68A04C00EB775F /* Caronas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caronas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		675B1C811D68A04C00EB775F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		675B1C831D68A04C00EB775F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		675B1C861D68A04C00EB775F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		675B1C881D68A04C00EB775F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		675B1C8B1D68A04C00EB775F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		675B1C8D1D68A04C00EB775F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		675B1C931D68A09700EB775F /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		675B1C951D68A7F200EB775F /* Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
+		675B1C9B1D68B78800EB775F /* ListaPassageirosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaPassageirosViewController.swift; sourceTree = "<group>"; };
+		675B1C9D1D68DC6300EB775F /* CaronaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaronaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				675B1C811D68A04C00EB775F /* AppDelegate.swift */,
-				675B1C831D68A04C00EB775F /* ViewController.swift */,
+				675B1C9D1D68DC6300EB775F /* CaronaViewController.swift */,
+				675B1C9B1D68B78800EB775F /* ListaPassageirosViewController.swift */,
+				675B1C931D68A09700EB775F /* CadastroViewController.swift */,
+				675B1C951D68A7F200EB775F /* Paths.swift */,
 				675B1C851D68A04C00EB775F /* Main.storyboard */,
 				675B1C881D68A04C00EB775F /* Assets.xcassets */,
 				675B1C8A1D68A04C00EB775F /* LaunchScreen.storyboard */,
@@ -96,6 +105,7 @@
 				TargetAttributes = {
 					675B1C7D1D68A04C00EB775F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 948MZTBFKX;
 					};
 				};
 			};
@@ -135,8 +145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				675B1C841D68A04C00EB775F /* ViewController.swift in Sources */,
+				675B1C961D68A7F200EB775F /* Paths.swift in Sources */,
 				675B1C821D68A04C00EB775F /* AppDelegate.swift in Sources */,
+				675B1C941D68A09700EB775F /* CadastroViewController.swift in Sources */,
+				675B1C9C1D68B78800EB775F /* ListaPassageirosViewController.swift in Sources */,
+				675B1C9E1D68DC6300EB775F /* CaronaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +262,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Caronas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aw.Caronas;
@@ -260,6 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Caronas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aw.Caronas;
