@@ -92,9 +92,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v5O-hJ-3b7">
                                 <rect key="frame" x="0.0" y="180" width="375" height="437"/>
                             </mapView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wgl-Pq-Y4K">
-                                <rect key="frame" x="20" y="80" width="252" height="92"/>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data Atual" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyw-Rg-0kc">
                                 <rect key="frame" x="0.0" y="28" width="375" height="21"/>
                                 <color key="backgroundColor" red="0.9882352941176471" green="0.71372549019607845" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
@@ -114,19 +111,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.99215686274509807" green="0.75686274509803919" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selecione os Passageiros" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ3-dM-P4D">
-                                <rect key="frame" x="0.0" y="57" width="375" height="21"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C0-3K-d9J">
-                                <rect key="frame" x="311" y="115" width="22" height="22"/>
-                                <connections>
-                                    <action selector="adicionarPassageiro:" destination="8cg-9Y-Q9e" eventType="touchUpInside" id="AcA-KA-Qbl"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -135,7 +119,6 @@
                     <connections>
                         <outlet property="caronaMapView" destination="v5O-hJ-3b7" id="4Fr-68-X6L"/>
                         <outlet property="dataLabel" destination="Nyw-Rg-0kc" id="c3Y-Yw-x71"/>
-                        <outlet property="passageirosPickerView" destination="Wgl-Pq-Y4K" id="iN3-3Q-G9g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abl-HN-3XK" userLabel="First Responder" sceneMemberID="firstResponder"/>
