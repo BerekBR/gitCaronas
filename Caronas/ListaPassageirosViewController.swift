@@ -37,9 +37,6 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
             }
         }
 
-    
-  
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -66,6 +63,7 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath)
         
         // Configure the cell...
@@ -76,6 +74,12 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
 
         return cell
         
+    }
+    //MARK: - Actions
+    
+    @IBAction func iniciarCarona(sender: UIButton) {
+    
+    
     }
     
     

@@ -19,7 +19,6 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var caronaMapView: MKMapView!
     
-    @IBOutlet weak var passageirosPickerView: UIPickerView!
    
     
     //MARK: - Properties
@@ -40,9 +39,7 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
 
          print(formatadorData.stringFromDate(data))
         self.dataLabel.text = formatadorData.stringFromDate(data)
-        
-        //Ajustando PickerView
-        
+
         
         //Ajustando o GPS
         self.gps.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -69,6 +66,13 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
     }
     //MARK: - Actions
     
+    @IBAction func finalizarCarona(sender: UIButton) {
+        
+    
+    self.dismissViewControllerAnimated(true, completion: nil)
+    
+    
+    }
    
     //MARK: - Métodos de LocationManager Delegate
     
