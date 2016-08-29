@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1788.5" y="360.5"/>
+            <point key="canvasLocation" x="1700.5" y="-32.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="jRu-ym-oIn">
@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v5O-hJ-3b7">
-                                <rect key="frame" x="0.0" y="180" width="375" height="437"/>
+                                <rect key="frame" x="0.0" y="180" width="375" height="439"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data Atual" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyw-Rg-0kc">
                                 <rect key="frame" x="0.0" y="28" width="375" height="21"/>
@@ -100,10 +100,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-9D-eGM">
-                                <rect key="frame" x="0.0" y="569" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpW-LU-RFB">
-                                        <rect key="frame" x="133" y="9" width="108" height="30"/>
+                                        <rect key="frame" x="133" y="0.0" width="108" height="30"/>
                                         <state key="normal" title="Finalizar carona"/>
                                         <connections>
                                             <action selector="finalizarCarona:" destination="8cg-9Y-Q9e" eventType="touchUpInside" id="BFG-Qz-R23"/>
@@ -124,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abl-HN-3XK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1788.5" y="1160.5"/>
+            <point key="canvasLocation" x="1700.5" y="733.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="THf-gT-d78">
@@ -164,7 +164,7 @@
                                         <state key="normal" title="Iniciar carona"/>
                                         <connections>
                                             <action selector="iniciarCarona:" destination="1QN-hI-X75" eventType="touchUpInside" id="3Qs-s9-3eV"/>
-                                            <segue destination="8cg-9Y-Q9e" kind="show" id="Yhg-Zl-96l"/>
+                                            <segue destination="8cg-9Y-Q9e" kind="showDetail" id="Jq6-qh-zer"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -175,7 +175,7 @@
                                 <items>
                                     <barButtonItem systemItem="add" id="Up1-wh-6s0">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="hc3-we-JAC"/>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" id="PKi-PH-R0g"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -205,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJx-HM-Bhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1224.5" y="656.5"/>
+            <point key="canvasLocation" x="1077.5" y="309.5"/>
         </scene>
     </scenes>
 </document>
