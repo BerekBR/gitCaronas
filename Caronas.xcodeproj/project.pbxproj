@@ -15,6 +15,9 @@
 		675B1C961D68A7F200EB775F /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B1C951D68A7F200EB775F /* Paths.swift */; };
 		675B1C9C1D68B78800EB775F /* ListaPassageirosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B1C9B1D68B78800EB775F /* ListaPassageirosViewController.swift */; };
 		675B1C9E1D68DC6300EB775F /* CaronaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B1C9D1D68DC6300EB775F /* CaronaViewController.swift */; };
+		678D69B81D765C6100F97663 /* PassageiroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D69B61D765C6100F97663 /* PassageiroTableViewCell.swift */; };
+		678D69B91D765C6100F97663 /* PassageiroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 678D69B71D765C6100F97663 /* PassageiroTableViewCell.xib */; };
+		678D69BC1D76651600F97663 /* PassageiroTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D69BB1D76651600F97663 /* PassageiroTableViewCellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		675B1C951D68A7F200EB775F /* Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 		675B1C9B1D68B78800EB775F /* ListaPassageirosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaPassageirosViewController.swift; sourceTree = "<group>"; };
 		675B1C9D1D68DC6300EB775F /* CaronaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaronaViewController.swift; sourceTree = "<group>"; };
+		678D69B61D765C6100F97663 /* PassageiroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PassageiroTableViewCell.swift; path = Caronas/PassageiroTableViewCell.swift; sourceTree = "<group>"; };
+		678D69B71D765C6100F97663 /* PassageiroTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PassageiroTableViewCell.xib; path = Caronas/PassageiroTableViewCell.xib; sourceTree = "<group>"; };
+		678D69BB1D76651600F97663 /* PassageiroTableViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PassageiroTableViewCellDelegate.swift; path = Caronas/PassageiroTableViewCellDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +67,10 @@
 			isa = PBXGroup;
 			children = (
 				675B1C811D68A04C00EB775F /* AppDelegate.swift */,
-				675B1C9D1D68DC6300EB775F /* CaronaViewController.swift */,
 				675B1C9B1D68B78800EB775F /* ListaPassageirosViewController.swift */,
+				678D69BA1D765C6800F97663 /* Celula Personalizada */,
 				675B1C931D68A09700EB775F /* CadastroViewController.swift */,
+				675B1C9D1D68DC6300EB775F /* CaronaViewController.swift */,
 				675B1C951D68A7F200EB775F /* Paths.swift */,
 				675B1C851D68A04C00EB775F /* Main.storyboard */,
 				675B1C881D68A04C00EB775F /* Assets.xcassets */,
@@ -71,6 +78,17 @@
 				675B1C8D1D68A04C00EB775F /* Info.plist */,
 			);
 			path = Caronas;
+			sourceTree = "<group>";
+		};
+		678D69BA1D765C6800F97663 /* Celula Personalizada */ = {
+			isa = PBXGroup;
+			children = (
+				678D69B61D765C6100F97663 /* PassageiroTableViewCell.swift */,
+				678D69B71D765C6100F97663 /* PassageiroTableViewCell.xib */,
+				678D69BB1D76651600F97663 /* PassageiroTableViewCellDelegate.swift */,
+			);
+			name = "Celula Personalizada";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				675B1C8C1D68A04C00EB775F /* LaunchScreen.storyboard in Resources */,
+				678D69B91D765C6100F97663 /* PassageiroTableViewCell.xib in Resources */,
 				675B1C891D68A04C00EB775F /* Assets.xcassets in Resources */,
 				675B1C871D68A04C00EB775F /* Main.storyboard in Resources */,
 			);
@@ -146,10 +165,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				675B1C961D68A7F200EB775F /* Paths.swift in Sources */,
+				678D69BC1D76651600F97663 /* PassageiroTableViewCellDelegate.swift in Sources */,
 				675B1C821D68A04C00EB775F /* AppDelegate.swift in Sources */,
 				675B1C941D68A09700EB775F /* CadastroViewController.swift in Sources */,
 				675B1C9C1D68B78800EB775F /* ListaPassageirosViewController.swift in Sources */,
 				675B1C9E1D68DC6300EB775F /* CaronaViewController.swift in Sources */,
+				678D69B81D765C6100F97663 /* PassageiroTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +322,7 @@
 				675B1C921D68A04C00EB775F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,21 +8,29 @@
 
 import UIKit
 
-class ListaPassageirosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ListaPassageirosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PassageiroTableViewCellDelegate {
 
     //MARK: - Outlets
     @IBOutlet weak var listaPassageirosTableView: UITableView!
     
-    //MARK: - Propriedades
+    //MARK: - Properties
     
     var arrayListaPassageiros = [[String: String]]()
+    var arrayEstaoNaCarona = [String]()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        
+        //Definindo o Delegate e DataSource
         self.listaPassageirosTableView.dataSource = self
         self.listaPassageirosTableView.delegate = self
+        
+        //Registrando a célula personalizada
+        
+        let nib = UINib(nibName:"PassageiroTableViewCell", bundle: nil)
+        self.listaPassageirosTableView.registerNib(nib, forCellReuseIdentifier: "celula")
         
         
     }
@@ -59,18 +67,18 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Passageiros Cadastrados"
+        return "Passageiros a bordo"
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath) as! PassageiroTableViewCell
         
         // Configure the cell...
         
-        cell.textLabel?.text = self.arrayListaPassageiros[indexPath.row]["nome"]
-        print(cell.textLabel?.text)
-       
+        cell.nomeLabel.text = self.arrayListaPassageiros[indexPath.row]["nome"]
+        
+        cell.delegate = self
 
         return cell
         
@@ -78,7 +86,7 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
     //MARK: - Actions
     
     @IBAction func iniciarCarona(sender: UIButton) {
-    
+        self.performSegueWithIdentifier("mapaCarona", sender: self.arrayEstaoNaCarona)
     
     }
     
@@ -102,6 +110,21 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
         }
         return [delete]
    
+    }
+    //MARK: - Métodos de PassaeiroTableViewCellDelegate
+    func passageiroTableViewCellSwitch(cell: PassageiroTableViewCell) {
+        if cell.vaiDeCaronaSwitch.on {
+            self.arrayEstaoNaCarona  += [cell.nomeLabel.text!]
+            
+        }
+    }
+    //Segue programática
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "mapaCarona" {
+        
+        let instanciaTelaMapa = segue.destinationViewController as! CaronaViewController
+        instanciaTelaMapa.arrayResumoCarona = self.arrayEstaoNaCarona
+        }
     }
     
 }

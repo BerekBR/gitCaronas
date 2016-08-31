@@ -164,7 +164,7 @@
                                         <state key="normal" title="Iniciar carona"/>
                                         <connections>
                                             <action selector="iniciarCarona:" destination="1QN-hI-X75" eventType="touchUpInside" id="3Qs-s9-3eV"/>
-                                            <segue destination="8cg-9Y-Q9e" kind="showDetail" id="Jq6-qh-zer"/>
+                                            <segue destination="8cg-9Y-Q9e" kind="showDetail" identifier="mapaCarona" id="Jq6-qh-zer"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -183,16 +183,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lvx-Kn-3ci">
                                 <rect key="frame" x="0.0" y="64" width="375" height="507"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celula" id="Ybz-PY-o1u">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ybz-PY-o1u" id="3FB-3L-mF9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

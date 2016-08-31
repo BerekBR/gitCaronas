@@ -24,22 +24,15 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: - Properties
     
     let gps = CLLocationManager()
-    
+    var arrayResumoCarona = [String]()
   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       //Ajustando a data atual
-        let data = NSDate()
-        let formatadorData = NSDateFormatter()
-        formatadorData.dateStyle = NSDateFormatterStyle.LongStyle
-        formatadorData.locale = NSLocale(localeIdentifier: "pt_BR")
-
-         print(formatadorData.stringFromDate(data))
-        self.dataLabel.text = formatadorData.stringFromDate(data)
-
+        print(self.arrayResumoCarona)
+        self.dataLabel.text = DataAtual().hoje
         
         //Ajustando o GPS
         self.gps.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -68,7 +61,7 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func finalizarCarona(sender: UIButton) {
         
-    
+    self.gps.stopUpdatingLocation()
     self.dismissViewControllerAnimated(true, completion: nil)
     
     
@@ -86,5 +79,6 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
         
     
     }
+    
    
 }
