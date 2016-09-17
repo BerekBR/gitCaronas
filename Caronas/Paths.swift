@@ -10,20 +10,20 @@ import UIKit
 
 
 let home = NSHomeDirectory()
-let documents = (home as NSString).stringByAppendingPathComponent("Documents")
-let arquivo = (documents as NSString).stringByAppendingPathComponent("cadastro.plist")
+let documents = (home as NSString).appendingPathComponent("Documents")
+let arquivo = (documents as NSString).appendingPathComponent("cadastro.plist")
 
 
 struct  DataAtual {
-    let data = NSDate()
-    let formatadorData = NSDateFormatter()
+    let data = Date()
+    let formatadorData = DateFormatter()
     let hoje: String!
     
     init(){
     
-    self.formatadorData.dateStyle = NSDateFormatterStyle.LongStyle
-    self.formatadorData.locale = NSLocale(localeIdentifier: "pt_BR")
-    self.hoje = formatadorData.stringFromDate(data)
+    self.formatadorData.dateStyle = DateFormatter.Style.long
+    self.formatadorData.locale = Locale(identifier: "pt_BR")
+    self.hoje = formatadorData.string(from: data)
     }
 
 }

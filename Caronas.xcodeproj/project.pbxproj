@@ -18,6 +18,7 @@
 		678D69B81D765C6100F97663 /* PassageiroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D69B61D765C6100F97663 /* PassageiroTableViewCell.swift */; };
 		678D69B91D765C6100F97663 /* PassageiroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 678D69B71D765C6100F97663 /* PassageiroTableViewCell.xib */; };
 		678D69BC1D76651600F97663 /* PassageiroTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D69BB1D76651600F97663 /* PassageiroTableViewCellDelegate.swift */; };
+		67CC3B661D77BBFF00660F5A /* ResumoCaronaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC3B651D77BBFF00660F5A /* ResumoCaronaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		678D69B61D765C6100F97663 /* PassageiroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PassageiroTableViewCell.swift; path = Caronas/PassageiroTableViewCell.swift; sourceTree = "<group>"; };
 		678D69B71D765C6100F97663 /* PassageiroTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PassageiroTableViewCell.xib; path = Caronas/PassageiroTableViewCell.xib; sourceTree = "<group>"; };
 		678D69BB1D76651600F97663 /* PassageiroTableViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PassageiroTableViewCellDelegate.swift; path = Caronas/PassageiroTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		67CC3B651D77BBFF00660F5A /* ResumoCaronaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResumoCaronaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				678D69BA1D765C6800F97663 /* Celula Personalizada */,
 				675B1C931D68A09700EB775F /* CadastroViewController.swift */,
 				675B1C9D1D68DC6300EB775F /* CaronaViewController.swift */,
+				67CC3B651D77BBFF00660F5A /* ResumoCaronaViewController.swift */,
 				675B1C951D68A7F200EB775F /* Paths.swift */,
 				675B1C851D68A04C00EB775F /* Main.storyboard */,
 				675B1C881D68A04C00EB775F /* Assets.xcassets */,
@@ -118,12 +121,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Alexandre Wajcman";
 				TargetAttributes = {
 					675B1C7D1D68A04C00EB775F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 948MZTBFKX;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -166,6 +170,7 @@
 			files = (
 				675B1C961D68A7F200EB775F /* Paths.swift in Sources */,
 				678D69BC1D76651600F97663 /* PassageiroTableViewCellDelegate.swift in Sources */,
+				67CC3B661D77BBFF00660F5A /* ResumoCaronaViewController.swift in Sources */,
 				675B1C821D68A04C00EB775F /* AppDelegate.swift in Sources */,
 				675B1C941D68A09700EB775F /* CadastroViewController.swift in Sources */,
 				675B1C9C1D68B78800EB775F /* ListaPassageirosViewController.swift in Sources */,
@@ -210,8 +215,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -255,8 +262,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -275,6 +284,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -288,6 +298,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aw.Caronas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -300,6 +311,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aw.Caronas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -23,10 +23,10 @@ class PassageiroTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.vaiDeCaronaSwitch.on = false
+        self.vaiDeCaronaSwitch.isOn = false
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -34,7 +34,7 @@ class PassageiroTableViewCell: UITableViewCell {
     
     //MARK: - Actions
     
-    @IBAction func adicionarNaCarona(sender: UISwitch) {
+    @IBAction func adicionarNaCarona(_ sender: UISwitch) {
         
         self.delegate?.passageiroTableViewCellSwitch(self)
     

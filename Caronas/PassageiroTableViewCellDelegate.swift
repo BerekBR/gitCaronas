@@ -11,6 +11,6 @@ import Foundation
 
 protocol PassageiroTableViewCellDelegate {
 
-    func passageiroTableViewCellSwitch(cell: PassageiroTableViewCell)
+    func passageiroTableViewCellSwitch(_ cell: PassageiroTableViewCell)
 
 }

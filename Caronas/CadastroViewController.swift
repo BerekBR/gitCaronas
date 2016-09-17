@@ -55,9 +55,9 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     //MARK: - Actions
     
-    @IBAction func cadastrar(sender: UIButton) {
+    @IBAction func cadastrar(_ sender: UIButton) {
     
-        if NSFileManager.defaultManager().fileExistsAtPath(arquivo){
+        if FileManager.default.fileExists(atPath: arquivo){
             self.arrayPassageiros  = (NSArray(contentsOfFile: arquivo) as! [[String: String]])
         
         }else {
@@ -65,47 +65,47 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
             
         }
         
-        if let nomeTemp = self.nomeTextField.text, telefoneTemp = self.telefoneTextField.text, emailTemp = self.emailTextField.text{
+        if let nomeTemp = self.nomeTextField.text, let telefoneTemp = self.telefoneTextField.text, let emailTemp = self.emailTextField.text{
             self.arrayPassageiros += [["nome": nomeTemp, "telefone": telefoneTemp, "email": emailTemp, "trecho": self.trecho]]
             print(self.arrayPassageiros)
-            (self.arrayPassageiros as NSArray).writeToFile(arquivo, atomically: true)
+            (self.arrayPassageiros as NSArray).write(toFile: arquivo, atomically: true)
             self.nomeTextField.text = ""
             self.telefoneTextField.text = ""
             self.emailTextField.text = ""
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
-    @IBAction func cancelarCadastro(sender: UIButton) {
+    @IBAction func cancelarCadastro(_ sender: UIButton) {
     
-    self.dismissViewControllerAnimated(true, completion: nil)
+    self.dismiss(animated: true, completion: nil)
     
     }
     
     //MARK: - Métodos de PickerView DataSource
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.arrayTrechos.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return self.arrayTrechos[row]
     }
     
     
     //MARK: - Métodos de PickerView Delegate
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.trecho = self.arrayTrechos[row]
     }
     
     //MARK: - Métodos de TextField Delegate
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
         return true

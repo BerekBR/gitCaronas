@@ -16,7 +16,7 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
     //MARK: - Properties
     
     var arrayListaPassageiros = [[String: String]]()
-    var arrayEstaoNaCarona = [String]()
+    var dictEstaoNaCarona = [Int:String]()
    
     
     override func viewDidLoad() {
@@ -30,16 +30,18 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
         //Registrando a célula personalizada
         
         let nib = UINib(nibName:"PassageiroTableViewCell", bundle: nil)
-        self.listaPassageirosTableView.registerNib(nib, forCellReuseIdentifier: "celula")
+        self.listaPassageirosTableView.register(nib, forCellReuseIdentifier: "celula")
+        
+        
         
         
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             self.listaPassageirosTableView.reloadData()
         }
-        if NSFileManager.defaultManager().fileExistsAtPath(arquivo){
+        if FileManager.default.fileExists(atPath: arquivo){
             self.arrayListaPassageiros = (NSArray(contentsOfFile: arquivo) as! [[String: String]])
             
             }
@@ -55,75 +57,105 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
     
     //MARK: - Métodos de TableView DataSource
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
 
         return self.arrayListaPassageiros.count
 
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Passageiros a bordo"
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath) as! PassageiroTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath) as! PassageiroTableViewCell
         
         // Configure the cell...
         
-        cell.nomeLabel.text = self.arrayListaPassageiros[indexPath.row]["nome"]
+        cell.nomeLabel.text = self.arrayListaPassageiros[(indexPath as NSIndexPath).row]["nome"]
         
         cell.delegate = self
+        
+        
 
         return cell
         
     }
     //MARK: - Actions
     
-    @IBAction func iniciarCarona(sender: UIButton) {
-        self.performSegueWithIdentifier("mapaCarona", sender: self.arrayEstaoNaCarona)
+    @IBAction func iniciarCarona(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "mapaSegue", sender: self.dictEstaoNaCarona)
     
     }
     
+    
+    @IBAction func retornar (_ segue: UIStoryboardSegue){
+        
+        
+        print("Disparou segue unwind")
+        
+    }
+
     
     //MARK: - Métodos de TableView Delegate
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
     }
+
     
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .Destructive, title: "Delete") { (delete, indexPath) in
-           
-            self.arrayListaPassageiros.removeAtIndex(indexPath.row)
-            (self.arrayListaPassageiros as NSArray).writeToFile(arquivo, atomically: true)
-            dispatch_async(dispatch_get_main_queue()) {
-                self.listaPassageirosTableView.reloadData()
-            }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: UITableViewRowActionStyle.destructive, title: "Delete") { (delete, indexPath) in
             
+            self.arrayListaPassageiros.remove(at: (indexPath as NSIndexPath).row)
+            (self.arrayListaPassageiros as NSArray).write(toFile: arquivo, atomically: true)
+            DispatchQueue.main.async {
+                self.listaPassageirosTableView.reloadData()
+
+        }
+        
             print("deletar nome")
         }
         return [delete]
    
     }
+    
+
     //MARK: - Métodos de PassaeiroTableViewCellDelegate
-    func passageiroTableViewCellSwitch(cell: PassageiroTableViewCell) {
-        if cell.vaiDeCaronaSwitch.on {
-            self.arrayEstaoNaCarona  += [cell.nomeLabel.text!]
+    func passageiroTableViewCellSwitch(_ cell: PassageiroTableViewCell) {
+        
+    let index = (self.listaPassageirosTableView.indexPath(for: cell) as NSIndexPath?)?.row
+        
+        
+        if cell.vaiDeCaronaSwitch.isOn {
+            self.dictEstaoNaCarona[index!] = cell.nomeLabel.text!
+            print(self.dictEstaoNaCarona)
+            print(index)
+        }else {
             
+            if !self.dictEstaoNaCarona.isEmpty {
+                self.dictEstaoNaCarona.removeValue(forKey: index!)
+               print(self.dictEstaoNaCarona)
+                print(index)
+            }
         }
+        
+        
+        
     }
     //Segue programática
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "mapaCarona" {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mapaSegue" {
         
-        let instanciaTelaMapa = segue.destinationViewController as! CaronaViewController
-        instanciaTelaMapa.arrayResumoCarona = self.arrayEstaoNaCarona
+        let instanciaTelaMapa = segue.destination as! CaronaViewController
+            instanciaTelaMapa.dictCarona = self.dictEstaoNaCarona
         }
     }
     

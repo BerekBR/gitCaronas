@@ -19,25 +19,27 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var caronaMapView: MKMapView!
     
+    @IBOutlet weak var velocidadeLabel: UILabel!
    
+    @IBOutlet weak var localLabel: UILabel!
     
     //MARK: - Properties
     
     let gps = CLLocationManager()
-    var arrayResumoCarona = [String]()
+    var dictCarona = [Int: String]()
   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(self.arrayResumoCarona)
+        
         self.dataLabel.text = DataAtual().hoje
         
         //Ajustando o GPS
         self.gps.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         
-        if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedAlways && CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse {
+        if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways && CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
         
             gps.requestWhenInUseAuthorization()
         
@@ -47,7 +49,7 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
             self.caronaMapView.showsUserLocation = true
             self.gps.delegate = self
             self.gps.startUpdatingLocation()
-    
+        
         }
         
         
@@ -59,26 +61,42 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
     }
     //MARK: - Actions
     
-    @IBAction func finalizarCarona(sender: UIButton) {
+    @IBAction func finalizarCarona(_ sender: UIButton) {
         
     self.gps.stopUpdatingLocation()
-    self.dismissViewControllerAnimated(true, completion: nil)
-    
+    self.performSegue(withIdentifier: "resumoSegue", sender: self.dictCarona)
     
     }
    
     //MARK: - Métodos de LocationManager Delegate
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
        
         
-        let regiao = MKCoordinateRegion(center: (locations.last?.coordinate)!, span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002))
+        let regiao = MKCoordinateRegion(center: (locations.last?.coordinate)!, span: MKCoordinateSpan(latitudeDelta: 0.007, longitudeDelta: 0.007))
         
         self.caronaMapView.setRegion(regiao, animated: true)
+        let velocidade = Int((locations.last!.speed) * 3.6)
+        self.velocidadeLabel.text = "\(velocidade)"
+        CLGeocoder().reverseGeocodeLocation(locations.last!) { (placeMark, error) in
+        self.localLabel.text = placeMark?.last?.name
+            
+        }
+        
         
     
     }
-    
+    //Segue programática
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "resumoSegue"{
+        
+            let instanciaTelaResumo = segue.destination as! ResumoCaronaViewController
+            instanciaTelaResumo.dictResumoCarona = self.dictCarona
+            
+            
+        
+        }
+    }
    
 }
