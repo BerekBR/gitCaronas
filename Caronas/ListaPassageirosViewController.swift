@@ -78,7 +78,7 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
         
         // Configure the cell...
         
-        cell.nomeLabel.text = self.arrayListaPassageiros[(indexPath as NSIndexPath).row]["nome"]
+        cell.nomeLabel.text = self.arrayListaPassageiros[indexPath.row]["nome"]
         
         cell.delegate = self
         
@@ -106,7 +106,7 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
     //MARK: - Métodos de TableView Delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        //TODO: implementar açao ao clicar célula
     }
 
     
@@ -114,11 +114,10 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
         
         let delete = UITableViewRowAction(style: UITableViewRowActionStyle.destructive, title: "Delete") { (delete, indexPath) in
             
-            self.arrayListaPassageiros.remove(at: (indexPath as NSIndexPath).row)
+            self.arrayListaPassageiros.remove(at: indexPath.row)
             (self.arrayListaPassageiros as NSArray).write(toFile: arquivo, atomically: true)
             DispatchQueue.main.async {
                 self.listaPassageirosTableView.reloadData()
-
         }
         
             print("deletar nome")
@@ -131,8 +130,8 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
     //MARK: - Métodos de PassaeiroTableViewCellDelegate
     func passageiroTableViewCellSwitch(_ cell: PassageiroTableViewCell) {
         
-    let index = (self.listaPassageirosTableView.indexPath(for: cell) as NSIndexPath?)?.row
-        
+        let index = self.listaPassageirosTableView.indexPath(for: cell)?.row
+            
         
         if cell.vaiDeCaronaSwitch.isOn {
             self.dictEstaoNaCarona[index!] = cell.nomeLabel.text!

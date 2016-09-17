@@ -43,8 +43,6 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.telefoneTextField.delegate = self
         self.emailTextField.delegate = self
         
-        
-        print(home)
         self.trecho = self.arrayTrechos[0]
     }
 
@@ -56,7 +54,8 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     //MARK: - Actions
     
     @IBAction func cadastrar(_ sender: UIButton) {
-    
+        //Swift 3 removeu o prefixo "NS" da classe NSFileManager
+        
         if FileManager.default.fileExists(atPath: arquivo){
             self.arrayPassageiros  = (NSArray(contentsOfFile: arquivo) as! [[String: String]])
         
