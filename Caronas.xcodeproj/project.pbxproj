@@ -19,6 +19,7 @@
 		678D69B91D765C6100F97663 /* PassageiroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 678D69B71D765C6100F97663 /* PassageiroTableViewCell.xib */; };
 		678D69BC1D76651600F97663 /* PassageiroTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D69BB1D76651600F97663 /* PassageiroTableViewCellDelegate.swift */; };
 		67CC3B661D77BBFF00660F5A /* ResumoCaronaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC3B651D77BBFF00660F5A /* ResumoCaronaViewController.swift */; };
+		67FC61341DA2EEA9005A5892 /* TarifarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC61331DA2EEA9005A5892 /* TarifarioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		678D69B71D765C6100F97663 /* PassageiroTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PassageiroTableViewCell.xib; path = Caronas/PassageiroTableViewCell.xib; sourceTree = "<group>"; };
 		678D69BB1D76651600F97663 /* PassageiroTableViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PassageiroTableViewCellDelegate.swift; path = Caronas/PassageiroTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		67CC3B651D77BBFF00660F5A /* ResumoCaronaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResumoCaronaViewController.swift; sourceTree = "<group>"; };
+		67FC61331DA2EEA9005A5892 /* TarifarioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarifarioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				675B1C9B1D68B78800EB775F /* ListaPassageirosViewController.swift */,
 				678D69BA1D765C6800F97663 /* Celula Personalizada */,
 				675B1C931D68A09700EB775F /* CadastroViewController.swift */,
+				67FC61331DA2EEA9005A5892 /* TarifarioViewController.swift */,
 				675B1C9D1D68DC6300EB775F /* CaronaViewController.swift */,
 				67CC3B651D77BBFF00660F5A /* ResumoCaronaViewController.swift */,
 				675B1C951D68A7F200EB775F /* Paths.swift */,
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				675B1C961D68A7F200EB775F /* Paths.swift in Sources */,
+				67FC61341DA2EEA9005A5892 /* TarifarioViewController.swift in Sources */,
 				678D69BC1D76651600F97663 /* PassageiroTableViewCellDelegate.swift in Sources */,
 				67CC3B661D77BBFF00660F5A /* ResumoCaronaViewController.swift in Sources */,
 				675B1C821D68A04C00EB775F /* AppDelegate.swift in Sources */,

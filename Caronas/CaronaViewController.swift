@@ -26,15 +26,15 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: - Properties
     
     let gps = CLLocationManager()
-    var dictCarona = [Int: String]()
-  
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //Ajustando Labels
         self.dataLabel.text = DataAtual().hoje
+        self.velocidadeLabel.text = ""
+        self.localLabel.text = ""
         
         //Ajustando o GPS
         self.gps.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -44,7 +44,6 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
             gps.requestWhenInUseAuthorization()
         
         } else {
-            
           
             self.caronaMapView.showsUserLocation = true
             self.gps.delegate = self
@@ -64,7 +63,7 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func finalizarCarona(_ sender: UIButton) {
         
     self.gps.stopUpdatingLocation()
-    self.performSegue(withIdentifier: "resumoSegue", sender: self.dictCarona)
+    self.performSegue(withIdentifier: "resumoSegue", sender: nil)
     
     }
    
@@ -72,22 +71,30 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-       
         
         let regiao = MKCoordinateRegion(center: (locations.last?.coordinate)!, span: MKCoordinateSpan(latitudeDelta: 0.007, longitudeDelta: 0.007))
         
         self.caronaMapView.setRegion(regiao, animated: true)
         let velocidade = Int((locations.last!.speed) * 3.6)
-        self.velocidadeLabel.text = "\(velocidade)"
-        CLGeocoder().reverseGeocodeLocation(locations.last!) { (placeMark, error) in
-        self.localLabel.text = placeMark?.last?.name
-            
+        
+        
+        if velocidade < 0 {
+            self.velocidadeLabel.text = "0 km/h"
+        }else {
+        self.velocidadeLabel.text = "\(velocidade) km/h"
         }
         
+        CLGeocoder().reverseGeocodeLocation(locations.last!) { (placeMark, error) in
+    
+        self.localLabel.text = placeMark?.first?.name
+        
+        }
         
     
     }
-    //Segue programática
+    
+    
+  /*  //Segue programática
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resumoSegue"{
         
@@ -97,6 +104,6 @@ class CaronaViewController: UIViewController, CLLocationManagerDelegate {
             
         
         }
-    }
+    }*/
    
 }

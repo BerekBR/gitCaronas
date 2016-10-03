@@ -1,28 +1,22 @@
 //
-//  ResumoCaronaViewController.swift
+//  TarifarioViewController.swift
 //  Caronas
 //
-//  Created by Alexandre Wajcman on 31/08/16.
+//  Created by Alexandre Wajcman on 03/10/16.
 //  Copyright © 2016 Alexandre Wajcman. All rights reserved.
 //
 
 import UIKit
 
-class ResumoCaronaViewController: UIViewController {
+class TarifarioViewController: UIViewController {
+
     //Outlets
     
-    @IBOutlet weak var resumoTextView: UITextView!
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.resumoTextView.text = "O percurso da carona foi de 12 km e o valor a ser pago por cada passageiro é de\n"
 
-        for i in dictListaCarona {
-        
-        self.resumoTextView.text = self.resumoTextView.text + "\(i.1) Valor R$ \(tarifaFixa)\n"
-        }
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,12 +24,19 @@ class ResumoCaronaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    //Actions
+    
+    @IBAction func definirTarifa(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

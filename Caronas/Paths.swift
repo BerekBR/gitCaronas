@@ -8,12 +8,17 @@
 
 import UIKit
 
-
+//Estrutura de paths
 let home = NSHomeDirectory()
 let documents = (home as NSString).appendingPathComponent("Documents")
 let arquivo = (documents as NSString).appendingPathComponent("cadastro.plist")
 
+public var  dictListaCarona = [Int: String]()
 
+public var tarifaFixa: Double = 4.00
+
+
+//Criação da data atual no formato português do Brasil
 struct  DataAtual {
     let data = Date()
     let formatadorData = DateFormatter()

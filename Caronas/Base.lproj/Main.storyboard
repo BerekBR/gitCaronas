@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="efG-vS-vmO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1QN-hI-X75">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Cadastro-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CadastroViewController" customModule="Caronas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Cadastro" id="BYZ-38-t0r" customClass="CadastroViewController" customModule="Caronas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -83,12 +83,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2170" y="-146"/>
+            <point key="canvasLocation" x="2150" y="-383"/>
         </scene>
-        <!--Item-->
+        <!--Tarifa-->
+        <scene sceneID="OOb-WQ-0mC">
+            <objects>
+                <viewController title="Tarifa" id="aYV-78-UR3" customClass="TarifarioViewController" customModule="Caronas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fcU-cT-y8j"/>
+                        <viewControllerLayoutGuide type="bottom" id="DEz-Dz-gTP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cgi-Mw-qjk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1O-za-2I4">
+                                <frame key="frameInset" minX="164" minY="493" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Definir"/>
+                                <connections>
+                                    <action selector="definirTarifa:" destination="aYV-78-UR3" eventType="touchUpInside" id="YeZ-LS-4F7"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ZU-yW-Mk1">
+                                <frame key="frameInset" minX="16" minY="108" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfV-Tm-59m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2149.5999999999999" y="331.48425787106447"/>
+        </scene>
+        <!--Carona-->
         <scene sceneID="jRu-ym-oIn">
             <objects>
-                <viewController id="8cg-9Y-Q9e" customClass="CaronaViewController" customModule="Caronas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Carona" id="8cg-9Y-Q9e" customClass="CaronaViewController" customModule="Caronas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="my7-Ro-tQj"/>
                         <viewControllerLayoutGuide type="bottom" id="Wbh-Yr-OBx"/>
@@ -98,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v5O-hJ-3b7">
-                                <frame key="frameInset" minY="180" width="375" height="487"/>
+                                <frame key="frameInset" minY="47" width="375" height="620"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data Atual" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyw-Rg-0kc">
@@ -125,37 +160,17 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.71372549019999998" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Velocidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHM-9W-aSp">
-                                <frame key="frameInset" minX="13" minY="66" width="85" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Local" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq0-Du-3wr">
-                                <frame key="frameInset" minX="20" minY="112" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fG-vJ-isf">
-                                <frame key="frameInset" minX="168" minY="66" width="39" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcY-QD-u80">
-                                <frame key="frameInset" minX="106" minY="52" width="69" height="50"/>
+                                <frame key="frameInset" minX="153" minY="66" width="69" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcq-9B-tPu">
-                                <frame key="frameInset" minX="98" minY="112" width="257" height="21"/>
+                                <frame key="frameInset" minY="578" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -173,12 +188,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abl-HN-3XK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2151" y="869"/>
+            <point key="canvasLocation" x="2150" y="1072"/>
         </scene>
-        <!--Resumo Carona View Controller-->
+        <!--Resumo-->
         <scene sceneID="Aax-r4-0wJ">
             <objects>
-                <viewController id="BUE-Ww-6ka" customClass="ResumoCaronaViewController" customModule="Caronas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Resumo" id="BUE-Ww-6ka" customClass="ResumoCaronaViewController" customModule="Caronas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bxt-Uj-o4w"/>
                         <viewControllerLayoutGuide type="bottom" id="mbb-XS-Wcv"/>
@@ -215,27 +230,10 @@
             </objects>
             <point key="canvasLocation" x="3033" y="869"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="THf-gT-d78">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="efG-vS-vmO" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Law-WX-4HF">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="1QN-hI-X75" kind="relationship" relationship="viewControllers" id="bMM-nu-7bq"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uE0-Fx-WJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="492" y="310"/>
-        </scene>
-        <!--Item-->
+        <!--Lista Passageiros-->
         <scene sceneID="ZI0-Yz-g73">
             <objects>
-                <viewController id="1QN-hI-X75" customClass="ListaPassageirosViewController" customModule="Caronas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Lista Passageiros" id="1QN-hI-X75" customClass="ListaPassageirosViewController" customModule="Caronas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lf8-Oh-Kda"/>
                         <viewControllerLayoutGuide type="bottom" id="uAG-xL-81z"/>
@@ -267,6 +265,12 @@
                                     <barButtonItem systemItem="add" id="Up1-wh-6s0">
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="showDetail" id="PKi-PH-R0g"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="B9l-Em-Nst"/>
+                                    <barButtonItem systemItem="compose" id="NMB-gx-E5T">
+                                        <connections>
+                                            <segue destination="aYV-78-UR3" kind="show" id="yA7-Q9-xvV"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

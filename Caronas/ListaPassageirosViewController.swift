@@ -90,8 +90,8 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
     //MARK: - Actions
     
     @IBAction func iniciarCarona(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "mapaSegue", sender: self.dictEstaoNaCarona)
-    
+        self.performSegue(withIdentifier: "mapaSegue", sender: nil)
+        
     }
     
     
@@ -134,14 +134,14 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
             
         
         if cell.vaiDeCaronaSwitch.isOn {
-            self.dictEstaoNaCarona[index!] = cell.nomeLabel.text!
-            print(self.dictEstaoNaCarona)
+            dictListaCarona[index!] = cell.nomeLabel.text!
+            print(dictListaCarona)
             print(index)
         }else {
             
-            if !self.dictEstaoNaCarona.isEmpty {
-                self.dictEstaoNaCarona.removeValue(forKey: index!)
-               print(self.dictEstaoNaCarona)
+            if !dictListaCarona.isEmpty {
+                dictListaCarona.removeValue(forKey: index!)
+               print(dictListaCarona)
                 print(index)
             }
         }
@@ -149,13 +149,13 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
         
         
     }
-    //Segue programática
+   /* //Segue programática para "passar" array de passageiros
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mapaSegue" {
         
         let instanciaTelaMapa = segue.destination as! CaronaViewController
-            instanciaTelaMapa.dictCarona = self.dictEstaoNaCarona
+            instanciaTelaMapa.dictCarona = dictListaCarona
         }
-    }
+    } */
     
 }
