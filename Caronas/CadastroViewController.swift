@@ -65,7 +65,7 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
         
         if let nomeTemp = self.nomeTextField.text, let telefoneTemp = self.telefoneTextField.text, let emailTemp = self.emailTextField.text{
-            self.arrayPassageiros += [["nome": nomeTemp, "telefone": telefoneTemp, "email": emailTemp, "trecho": self.trecho]]
+            self.arrayPassageiros = self.arrayPassageiros + [["nome": nomeTemp, "telefone": telefoneTemp, "email": emailTemp, "trecho": self.trecho]]
             print(self.arrayPassageiros)
             (self.arrayPassageiros as NSArray).write(toFile: arquivo, atomically: true)
             self.nomeTextField.text = ""

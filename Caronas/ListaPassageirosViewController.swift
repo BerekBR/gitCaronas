@@ -136,13 +136,13 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
         if cell.vaiDeCaronaSwitch.isOn {
             dictListaCarona[index!] = cell.nomeLabel.text!
             print(dictListaCarona)
-            print(index)
+            print(index!)
         }else {
             
             if !dictListaCarona.isEmpty {
                 dictListaCarona.removeValue(forKey: index!)
                print(dictListaCarona)
-                print(index)
+                print(index!)
             }
         }
         

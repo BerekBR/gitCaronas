@@ -21,7 +21,7 @@ class ResumoCaronaViewController: UIViewController {
 
         for i in dictListaCarona {
         
-        self.resumoTextView.text = self.resumoTextView.text + "\(i.1) Valor R$ \(tarifaFixa)\n"
+        self.resumoTextView.text = self.resumoTextView.text + "\(i.1) - R$ \(tarifaFixa)\n"
         }
     }
 
