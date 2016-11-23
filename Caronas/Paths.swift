@@ -13,6 +13,8 @@ let home = NSHomeDirectory()
 let documents = (home as NSString).appendingPathComponent("Documents")
 let arquivo = (documents as NSString).appendingPathComponent("cadastro.plist")
 let tarifaArquivo = (documents as NSString).appendingPathComponent("tarifa.plist")
+
+
 public var  dictListaCarona = [Int: String]()
 
 public var tarifaFixa = ""

@@ -32,6 +32,15 @@ class ListaPassageirosViewController: UIViewController, UITableViewDataSource, U
         let nib = UINib(nibName:"PassageiroTableViewCell", bundle: nil)
         self.listaPassageirosTableView.register(nib, forCellReuseIdentifier: "celula")
         
+        //Atribuindo valor inicial a Tarifa
+        if FileManager.default.fileExists(atPath: tarifaArquivo){
+            
+            let tarifaArray = (NSArray(contentsOfFile: tarifaArquivo) as! Array<String>)
+            
+            tarifaFixa = (tarifaArray.last)!
+            print(tarifaFixa)
+        }
+        print(NSHomeDirectory())
         
         
         

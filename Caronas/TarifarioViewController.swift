@@ -13,12 +13,14 @@ class TarifarioViewController: UIViewController, UIPickerViewDataSource, UIPicke
     //MARK: - Outlets
     
     @IBOutlet weak var tarifaPickerView: UIPickerView!
+    
+    @IBOutlet weak var tarifaLabel: UILabel!
 
     
     //MARK: - Properties
     var arrayValor:[String] = []
     var valor = ""
-    var indexPickerView:[Int] = []
+    var pickerViewValue:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,19 +36,19 @@ class TarifarioViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 self.arrayValor.append(valor)
                 
             }
-            //print(self.arrayValor)
+            
         }
         
         //verificação que inicia o Pickerview com o último index selecionado
         
         if FileManager.default.fileExists(atPath: tarifaArquivo){
         
-            let index = (NSArray(contentsOfFile: tarifaArquivo) as! Array<Int>)
-            print(index[0])
+            let tarifaArray = (NSArray(contentsOfFile: tarifaArquivo) as! Array<String>)
             
-            self.tarifaPickerView.selectRow(index[0], inComponent: 0, animated: true)
-            let linha = self.tarifaPickerView.selectedRow(inComponent: 0)
-            tarifaFixa = self.arrayValor[linha]
+            tarifaFixa = (tarifaArray.last)!
+            self.tarifaLabel.text = "R$ " + tarifaFixa
+        }else {
+            self.tarifaLabel.text = "R$ 0.00" 
         }
         
     }
@@ -78,10 +80,12 @@ class TarifarioViewController: UIViewController, UIPickerViewDataSource, UIPicke
     //MARK: - Métodos de PickerView Delegate
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         tarifaFixa = self.arrayValor[row]
-        self.indexPickerView.append(row)
-        // Persistencia do preço selecionado 
-        (self.indexPickerView as NSArray).write(toFile: tarifaArquivo, atomically: true)
-        print(self.indexPickerView)
+        self.pickerViewValue.append(tarifaFixa) //Rever implementaçao da tupla do pickerviewValue
+       
+    // Persistencia do preço selecionado
+        (self.pickerViewValue as NSArray).write(toFile: tarifaArquivo, atomically: true)
+        self.tarifaLabel.text = "R$ " + tarifaFixa
+        print(self.pickerViewValue.last)
         
     }
     
